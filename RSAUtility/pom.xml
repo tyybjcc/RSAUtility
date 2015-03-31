@@ -6,6 +6,8 @@
   <artifactId>RSAUtility</artifactId>
   <version>1.0-alpha</version>
   <packaging>jar</packaging>
+  
+   
 
   <name>RSAUtility</name>
   <url>http://maven.apache.org</url>
@@ -33,7 +35,35 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
   
-
+  <build>
+  	<plugins>
+  		<plugin>  
+		    <groupId>org.apache.maven.plugins</groupId>  
+		    <artifactId>maven-assembly-plugin</artifactId>  
+		    <version>2.3</version>  
+		    <configuration>  
+			    <appendAssemblyId>false</appendAssemblyId>  
+		        <descriptorRefs>  
+		            <descriptorRef>jar-with-dependencies</descriptorRef>  
+		        </descriptorRefs> 
+		        <archive>  
+		            <manifest>  
+		                <mainClass>com.tyy.test.Security.RSAUtility</mainClass>  
+		            </manifest>  
+		        </archive>  
+		    </configuration>  
+		    <executions>  
+		        <execution>  
+		            <id>make-assembly</id>  
+		            <phase>package</phase>  
+		            <goals>  
+		                <goal>assembly</goal>  
+		            </goals>  
+		        </execution>  
+		    </executions> 
+		</plugin> 
+  	</plugins>
+  </build>
 
   <dependencies>
     <dependency>
