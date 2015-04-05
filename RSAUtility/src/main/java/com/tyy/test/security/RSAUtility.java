@@ -242,7 +242,7 @@ public class RSAUtility{
     
     
 	public static void main(String[]args) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidSecretException, NoSuchPaddingException, InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
-		String baseString="hello RSA";
+		String baseString="hello RSA 1234567890";
 		//获取工具类
 		RSAUtility rsa=new RSAUtility();
        //得到数字签名
@@ -256,7 +256,7 @@ public class RSAUtility{
        /**
         * test encryption and decryption
         */
-       String srcString="hello RSA. Source String";
+       String srcString="hello RSA. Source String hello RSA 1234567890";
        /*
        byte[] target=hostEncrypt(rsa.getPrivate(),srcString.getBytes());
        System.out.println(Base64.encode(target));
@@ -273,6 +273,10 @@ public class RSAUtility{
        System.out.println(shouldBeTrue);
        boolean shouldBeTrue2=new String( hostDecrypt( rsa.getPrivate(),clientEncrypt(rsa.getPublic(),srcString.getBytes()) ) ).equals(srcString);
        System.out.println(shouldBeTrue2);
+       
+       //print Base64 public key and private key
+       //System.out.println( new String( Base64.encode( rsa.getPrivate().getEncoded() ) ) );
+       //System.out.println( new String( Base64.encode( rsa.getPublic().getEncoded() ) ) );
 	}
 
 }
