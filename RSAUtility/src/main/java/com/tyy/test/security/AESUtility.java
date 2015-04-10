@@ -16,8 +16,6 @@ import javax.crypto.spec.SecretKeySpec;
 
 import org.glassfish.jersey.oauth1.signature.Base64;
 
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BASE64DecoderStream;
-import com.sun.xml.internal.messaging.saaj.packaging.mime.util.BASE64EncoderStream;
 
 /**
  * AES encryption and decryption implementation in Java
